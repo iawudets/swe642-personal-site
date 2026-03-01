@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ilia Awudetsey's Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {
+      font-family: "Montserrat", sans-serif;
+    }
+    .w3-row-padding img {
+      margin-bottom: 12px;
+    }
+    .bgimg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('me.jpg');
+      min-height: 100%;
+    }
+    /* GMU colors */
+    .bg-green {
+      background-color: #006633 !important;
+    }
+    .bg-yellow {
+      background-color: #FFCC33 !important;
+    }
+    .text-green {
+      color: #006633 !important;
+    }
+    .text-yellow {
+      color: #FFCC33 !important;
+    }
+    /* header box with a solid green border and box shadow */
+    .heading-box {
+      border: 5px solid #006633;
+  padding: 20px;
+      /*display: inline-block;*/
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+      background-color: #FFCC33;
+      border-radius: 8px;
+    }
+    body {
+      background-color: #f0f0f0
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
+
+<!-- Hidden Sidebar -->
+<nav class="w3-sidebar bg-green w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button bg-green w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove text-yellow"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button text-yellow" onclick="closeNav()">Home</a>
+    <a href="#about" class="w3-bar-item w3-button text-yellow" onclick="closeNav()">About</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon -->
+  <span class="w3-button w3-top bg-yellow w3-xxlarge text-green w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <div class="heading-box">
+  <header class="w3-container w3-center bg-yellow text-green" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Ilia Awudetsey</b></h1>
+    <p>Software Engineering Graduate Student</p>
+    <img src="me.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="me.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+  </header>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify text-green w3-padding-32" id="about">
+    <h2>About</h2>
+    <hr class="w3-opacity">
+    <p>      Hello everyone! My name is Ilia Awudetsey and I am currently working full-time as a Technical Support Engineer for Red Hat. I decided to pursue my Master's in Software Engineering back in 2024 and now I'm in my final year of completing this program! I find joy in both adventure and learning. I love, exploring trails, and connecting with nature. When I'm not outside, I spend my time reading! I'm not involved with web programming in my current role, so most of my experience comes from working on web-based projects during my university studies. I'm familiar with creating simple applications with Spring Boot and Angular, and I would love to get more experience deploying more complex projects involving cloud computing instances, message services, and Docker. This class seemed like a good opportunity to take my skills a step further, so I'm excited to collaborate with you all throughout the semester!
+    </p>
+    <a href="https://swe642-iawudets-bucket.s3.us-east-1.amazonaws.com/cs_survey/survey.html"> Link to CS Department Information Page </a>
+    <br>
+    <a href="https://swe642-iawudets-bucket.s3.us-east-1.amazonaws.com/cs_survey/survey_form.html"> Link to CS Department Survey Form </a>
+    <h3 class="w3-padding-16">My Skills</h3>
+
+    <!-- Bootstrap progress bars -->
+    <p class="w3-wide">Java Programming</p>
+    <div class="progress">
+      <div class="progress-bar bg-green" role="progressbar" style="width:95%">95%</div>
+    </div>
+
+    <p class="w3-wide">Database Design</p>
+    <div class="progress">
+      <div class="progress-bar bg-green" role="progressbar" style="width:85%">85%</div>
+    </div>
+
+    <p class="w3-wide">Backend Development</p>
+    <div class="progress">
+      <div class="progress-bar bg-green" role="progressbar" style="width:80%">80%</div>
+    </div><br>
+
+    <div class="row text-center bg-green text-yellow p-4 my-4">
+      <div class="col">
+        <span class="fs-3">14+</span><br>Partners
+      </div>
+      <div class="col">
+        <span class="fs-3">55+</span><br>Projects Done
+      </div>
+      <div class="col">
+        <span class="fs-3">89+</span><br>Happy Clients
+      </div>
+      <div class="col">
+        <span class="fs-3">150+</span><br>Meetings
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container bg-yellow text-green w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </footer>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

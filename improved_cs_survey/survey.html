@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CS Department Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+        a {font-family: "Lato", sans-serif}
+        h1,button {font-family: "Montserrat", sans-serif}
+        h1 { color: #006633; }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #006633;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FFCC33;
+            color: #000;
+        }
+        /* header box with a solid green border and box shadow */
+        .heading-box {
+            border: 5px solid #006633;
+            padding: 20px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+            background-color: #FFCC33;
+            border-radius: 8px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #006633;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #FFCC33;
+            color: #006633;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-black" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Header -->
+<div class="heading-box">
+<header class="text-center">
+    <h1 class="display-3">Computer Science Department Information Page</h1>
+</header>
+</div>
+
+<!-- First Grid -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Welcome to George Mason's Computer Science Department!</h1>
+            <h5 class="w3-padding-32"> The Department of Computer Science (CS) combines academic excellence with real-world relevance. As one of the largest and fastest-growing computer science departments in Virginia, we are committed to preparing students for leadership in a digital-first world.
+            </h5>
+            <h5 class="w3-padding-32"> The Department of Computer Science offers academic pathways that provide the flexibility and depth needed to thrive in today's technology landscape. The ABET-accredited undergraduate programs build a strong foundation in computing with concentrations like Artificial Intelligence (AI), Computer Game Design, Linguistics, Bioinformatics, and Technology Policy.</h5>
+
+            <a class="w3-padding-32" href="https://swe642-iawudets-bucket.s3.us-east-1.amazonaws.com/cs_survey/survey_form.html">
+                Link to Deparment Survey Page here.
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="gm.svg" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- Second Grid -->
+<div class="container-fluid bg-light py-5 col-md-8">
+    <h1 style="text-align: center">Computer Science MS Degree Programs</h1>
+
+    <!-- List of MS Degrees -->
+    <h2>Available Programs</h2>
+    <ul>
+        <li>Computer Science, MS</li>
+        <li>Information Systems, MS</li>
+        <li>Software Engineering, MS</li>
+    </ul>
+
+    <!-- tables for required courses -->
+    <h2>Required Courses</h2>
+
+    <table>
+        <caption>Computer Science, MS</caption>
+        <tr>
+            <th>Course Number</th>
+            <th>Course Name</th>
+        </tr>
+        <tr>
+            <td>CS 540</td>
+            <td>Compilers</td>
+        </tr>
+        <tr>
+            <td>SWE 619</td>
+            <td>Object-Oriented Software Specification and Construction</td>
+        </tr>
+        <tr>
+            <td>SWE 621</td>
+            <td>Software Design and Architecture</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Information Systems, MS</caption>
+        <tr>
+            <th>Course Number</th>
+            <th>Course Name</th>
+        </tr>
+        <tr>
+            <td>CS 550</td>
+            <td>Database Systems</td>
+        </tr>
+        <tr>
+            <td>INFS 622</td>
+            <td>Information Systems Analysis and Design</td>
+        </tr>
+        <tr>
+            <td>INFS 580</td>
+            <td>Analytics: Big Data to Information </td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Software Engineering, MS</caption>
+        <tr>
+            <th>Course Number</th>
+            <th>Course Name</th>
+        </tr>
+        <tr>
+            <td>SWE 637</td>
+            <td>Software Testing</td>
+        </tr>
+        <tr>
+            <td>SWE 619</td>
+            <td>Object-Oriented Software Specification and Construction</td>
+        </tr>
+        <tr>
+            <td>SWE 621</td>
+            <td>Software Design and Architecture</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
