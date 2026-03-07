@@ -2,6 +2,36 @@
 <html lang="en">
 <head>
     <title>CS Department Survey</title>
+    <script type="text/javascript">
+        // builds the first part of the user greeting depending on the hour of day
+        function responseForTimeOfDay() {
+            var atm = new Date().getHours();
+            var greeting = "<h2 class=\"script-h2\"> Good ";
+
+            if (atm < 12) {
+                greeting += "morning";
+            } else if (atm < 16) {
+                greeting += "afternoon";
+            } else {
+                greeting += "evening";
+            }
+            greeting += ", ";
+            return greeting;
+        }
+
+        var username;
+        // ask for name only when cookie is empty
+        if (!(document.cookie)) {
+            username = (window.prompt("Welcome to the SWE642 Survey Form! Please enter your full name")).trim();
+            document.cookie = "username=" + username + "; expires=" + new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate());
+        } else {
+            // extracting the pair containing the username string ;)
+            username = document.cookie.split(";")[0].split("=")[1];
+        }
+
+        // finally write the composed greeting and user name to the document
+        document.writeln(responseForTimeOfDay() + username + "! Welcome to the SWE642 Survey Form!</h2>");
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -88,6 +118,12 @@
         caption {
             font-weight: bold;
             margin-bottom: 10px;
+        }
+        .script-h2 {
+            text-align: center;
+            font-family: "Lato", sans-serif;
+            color: #006633;
+            margin-top: 10px;
         }
     </style>
 </head>
