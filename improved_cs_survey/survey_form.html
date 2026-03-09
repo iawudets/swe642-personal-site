@@ -18,6 +18,11 @@
             greeting += ", ";
             return greeting;
         }
+        function newUserName() {
+            var new_username = (window.prompt("Please enter your full name")).trim();
+            document.cookie = "username=" + new_username + "; expires=" + new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate());
+            window.location.reload();
+        }
 
         var username;
         // ask for name only when cookie is empty
@@ -31,6 +36,8 @@
 
         // finally write the composed greeting and user name to the document
         document.writeln(responseForTimeOfDay() + username + "! Welcome to the SWE642 Survey Form!</h2>");
+        // include link to change name in greeting
+        document.writeln("<a href=\"javascript:newUserName()\" class=\"script-a\"> Not you? Click here to change names! </a>");
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
