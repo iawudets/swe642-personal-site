@@ -25,6 +25,45 @@
             window.location.reload();
         }
 
+        function calculateAvgMaxData() {
+            const input = document.getElementById('data-label-instructions').value;
+            const avg_data_element = document.getElementById("avg-data-element");
+            const max_data_element = document.getElementById("max-data-element");
+            const error_element = document.getElementById("error-label");
+            const values_string = input.split(",");
+            if (values_string.length != 10) { printError(); return; }
+            var values_number = [];
+            for (var x1 = 0; x1 < 10; x1++) {
+                var number_element = values_string[x1];
+                if (number_element > 100 || number_element < 1) {
+                    avg_data_element.textContent = "Average";
+                    max_data_element.textContent = "Maximum";
+                    printError();
+                    return;
+                }
+                values_number[x1] = parseInt(number_element);
+            }
+            error_element.textContent = "";
+            var max = 0;
+            var sum = 0;
+            for (var x2 = 0; x2 < 10; x2++) {
+                if (values_number[x2] > max) {max = values_number[x2];}
+                sum += values_number[x2];
+            }
+            const avg = sum / values_number.length;
+
+            avg_data_element.textContent = "Average: " + avg;
+            max_data_element.textContent = "Maximum: " + max;
+
+        }
+
+        function printError() {
+            var error_element = document.getElementById("error-label");
+            error_element.textContent = "Error: This field must have a list of 10 numbers, separated by commas. Each number must be from 1 to 100.";
+            error_element.visible = true;
+        }
+
+
         var username;
         // ask for name only when cookie is empty
         if (!(document.cookie)) {
@@ -138,6 +177,11 @@
             font-family: "Lato", sans-serif;
             color: #006633;
         }
+        .data-label-instructions {
+            font-size: 14px;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body class="bg-light">
@@ -268,6 +312,14 @@
             <!-- Comments -->
             <label for="comments">Additional Comments</label>
             <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
+
+            <label class="form-label"> Data </label>
+            <label class="form-label data-label-instructions" for="data-label-instructions"> *enter 10 comma-separated numbers ranging from 1-100 (e.g. 1,2,3,4...etc.) </label>
+            <textarea class="form-control" rows="2" placeholder="Enter comma-separated data here..." id="data-label-instructions" onfocusout="calculateAvgMaxData()"></textarea>
+            <label id="error-label" style="color:red"></label>
+
+            <label class="form-label" id="avg-data-element"> Computed Average </label>
+            <label class="form-label" id="max-data-element"> Computed Maximum </label>
 
             <!-- Submit -->
             <button type="submit">Submit Survey</button>
