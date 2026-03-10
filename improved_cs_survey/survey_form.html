@@ -63,6 +63,100 @@
             error_element.visible = true;
         }
 
+        function validateSurveyFormInput(event) {
+            // store values of all fields to be validated
+            const name_input = document.getElementById("username").value.trim();
+            const address_input = document.getElementById("street").value.trim();
+            const email_input = document.getElementById("email").value.trim();
+
+            // arrays to store each field's error message
+            var invalid_fields = [];
+            var error_msg = [];
+
+            // regex patterns to check for valid input
+            const name_regex = /^[A-Za-z\s]+$/;
+            const address_regex = /^[A-Za-z0-9\s.,-]+$/;
+            const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // validate all text input fields first
+            if (!(name_regex.test(name_input))) {
+                error_msg.push("Name can only contain alphabetic characters.");
+                invalid_fields.push("username");
+            }
+            if (!(address_regex.test(address_input))) {
+                error_msg.push("Address contains invalid characters.");
+                invalid_fields.push("street");
+            }
+            if (!(email_regex.test(email_input))) {
+                error_msg.push("Email address is invalid.");
+                invalid_fields.push("email");
+            }
+
+            // check that at least 2 checkboxes are selected
+            const checkboxes = document.querySelectorAll("input[name='liked']:checked");
+            if (checkboxes.length < 2) {
+                error_msg.push("Please select at least two things you liked about the campus.");
+            }
+            // check that a radio button is selected
+            const radio_buttons = document.querySelector("input[name='interest']:checked");
+            if (!radio_buttons) {
+                error_msg.push("Please select one reason you became interested in GMU.")
+            }
+
+            if (error_msg.length > 0) {
+                event.preventDefault();
+                const error_message = "The following errors were found: \n" + error_msg.join("\n");
+                window.alert(error_message);
+
+                for (var i = 0; i < invalid_fields.length; i++) {
+                    document.getElementById(invalid_fields[i]).textContent = "";
+                }
+                // stop the form from submitting
+                return false;
+            }
+            // continue to form submission
+            return true;
+        }
+
+        function addressSearchByZip() {
+            const zip_input = document.getElementById("zip").value.trim();
+            const zip_error_element = document.getElementById("zip-error-element");
+
+            const city_result = document.getElementById("placeholder-city");
+            const state_result = document.getElementById("placeholder-state");
+
+            city_result.textContent = "---";
+            state_result.textContent = "---";
+
+            if (zip_input.length != 5 || isNaN(zip_input)) {
+                zip_error_element.textContent = "Invalid zip entered.";
+                return;
+            }
+
+            // perform AJAX operations here
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "zipcodes.json", true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    var zip_data = JSON.parse(xhr.responseText);
+
+                    var zip_match = zip_data.find(entry => entry.zip_code == zip_input);
+
+                    if (zip_match) {
+                        city_result.textContent = zip_match.city;
+                        state_result.textContent = zip_match.state;
+                    } else {
+                        zip_error_element.textContent = "No match found for this zip code. Please try again.";
+                    }
+                }
+            };
+
+            xhr.send();
+
+
+        }
 
         var username;
         // ask for name only when cookie is empty
@@ -209,30 +303,31 @@
 
         <h2>Campus Visit Survey</h2>
 
-        <form autocomplete="on">
+        <form autocomplete="on" id="survey-form" onsubmit="return validateSurveyFormInput(event)" novalidate>
             <!-- Username -->
-            <label for="username" class="required">Username</label>
+            <label for="username" class="required">Name</label>
             <input type="text" id="username" name="username" placeholder="Enter your name" required autofocus>
 
             <!-- Address -->
             <label for="street" class="required">Street Address</label>
             <input type="text" id="street" name="street" required>
 
-            <label for="city" class="required">City</label>
-            <input type="text" id="city" name="city" required>
+            <label for="zip" class="required" >Zip Code</label>
+            <input type="text" id="zip" name="zip" placeholder="12345" onblur="addressSearchByZip()" required>
+            <div id="zip-error-element" style="color:red"></div>
 
-            <label for="state" class="required">State</label>
-            <input type="text" id="state" name="state" required>
+            <label>City</label>
+            <span id="placeholder-city">---</span>
 
-            <label for="zip" class="required">Zip Code</label>
-            <input type="text" id="zip" name="zip" pattern="[0-9]{5}" placeholder="12345" required>
+            <label>State</label>
+            <span id="placeholder-state">---</span>
 
             <!-- Contact -->
             <label for="tel" class="required">Telephone Number</label>
             <input type="tel" id="tel" name="tel" placeholder="123-456-7890" required>
 
-            <label for="email" class="required">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.com">
 
             <label for="url">Website URL</label>
             <input type="url" id="url" name="url" placeholder="https://example.com">
@@ -264,9 +359,9 @@
             </div>
 
             <!-- Radio buttons -->
-            <label class="required">How did you become interested in the university?</label>
+            <label>How did you become interested in the university?</label>
             <div class="radio-group">
-                <input type="radio" id="friends" name="interest" value="friends" required>
+                <input type="radio" id="friends" name="interest" value="friends" >
                 <label for="friends">Friends</label>
 
                 <input type="radio" id="tv" name="interest" value="television">
