@@ -4,7 +4,11 @@ import { SurveyList } from './survey-list/survey-list';
 
 export const routes: Routes = [
   {
-    path: 'dept-survey',
+    path: '',
+    component: WelcomePage
+  },
+  {
+    path: 'survey-form',
     component: SurveyForm
   },
   {
