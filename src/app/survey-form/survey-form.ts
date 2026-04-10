@@ -31,7 +31,6 @@ export class SurveyForm implements OnInit {
     return greeting;
   }
   newUserName(event: Event) {
-    console.log("newUserName is working!");
     event.preventDefault();
     let new_username: string | null = (window.prompt("Please enter your full name"));
     if (new_username !== null) {
@@ -202,7 +201,7 @@ export class SurveyForm implements OnInit {
     let username: string | null;
     // ask for name only when cookie is empty
     if (document.cookie != null) {
-      username = (window.prompt("Welcome to the SWE642 Survey Form! Please enter your full name"));
+      username = (window.prompt("Welcome to the CS Dept. Survey Form! Please enter your full name"));
       if (username != null) {
         username = username.trim();
       }
@@ -216,6 +215,6 @@ export class SurveyForm implements OnInit {
     }
 
     // finally write the composed greeting and username to the document
-    this.greeting = this.responseForTimeOfDay() + username + "! Welcome to the SWE642 Survey Form!";
+    this.greeting = this.responseForTimeOfDay() + username + "! Welcome to the CS Dept. Survey Form!";
   }
 }
