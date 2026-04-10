@@ -140,9 +140,18 @@
         <h2>Campus Visit Survey</h2>
 
         <form autocomplete="on" id="survey-form" onsubmit="return validateSurveyFormInput(event)" novalidate>
-            <!-- Username -->
-            <label for="username" class="required">Name</label>
-            <input type="text" id="username" name="username" placeholder="Enter your name" required autofocus>
+
+            <!-- Date of Survey -->
+            <label for="survey_date" class="required">Date of Survey</label>
+            <input type="date" id="survey_date" placeholder="MM/DD/YYYY" required>
+
+            <!-- First Name -->
+            <label for="first_name" class="required">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required autofocus>
+
+            <!-- Last Name -->
+            <label for="last_name" class="required">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required autofocus>
 
             <!-- Address -->
             <label for="street" class="required">Street Address</label>
@@ -162,8 +171,8 @@
             <label for="tel" class="required">Telephone Number</label>
             <input type="tel" id="tel" name="tel" placeholder="123-456-7890" required>
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="example@domain.com">
+            <label for="email" class="required">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
 
             <label for="url">Website URL</label>
             <input type="url" id="url" name="url" placeholder="https://example.com">
