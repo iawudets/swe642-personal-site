@@ -109,9 +109,11 @@
     </style>
 </head>
 <body class="bg-light">
-<h2>{{ greeting }}</h2>
-<div [@if]="showLink">
-  <a href='javascript:void(0)' (click)='newUserName($event)' class="script-a"> Not you? Click here to change names! </a>
+<div>
+  <h2>{{ greeting }}</h2>
+  @if(showLink) {
+      <a href='javascript:void(0)' (click)='newUserName($event)' class="script-a"> Not you? Click here to change names! </a>
+  }
 </div>
 
 <!-- Navbar -->
