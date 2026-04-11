@@ -101,11 +101,6 @@
             font-family: "Lato", sans-serif;
             color: #006633;
         }
-        .data-label-instructions {
-            font-size: 14px;
-            font-style: italic;
-        }
-
     </style>
 </head>
 <body class="bg-light">
@@ -173,9 +168,6 @@
 
             <label for="email" class="required">E-mail</label>
             <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-
-            <label for="url">Website URL</label>
-            <input type="url" id="url" name="url" placeholder="https://example.com">
 
             <!-- Checkboxes -->
             <label class="required">What did you like most about the campus?</label>
@@ -248,14 +240,6 @@
             <!-- Comments -->
             <label for="comments">Additional Comments</label>
             <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
-
-            <label class="form-label"> Data </label>
-            <label class="form-label data-label-instructions" for="data-label-instructions"> *enter 10 comma-separated numbers ranging from 1-100 (e.g. 1,2,3,4...etc.) </label>
-            <textarea class="form-control" rows="2" placeholder="Enter comma-separated data here..." id="data-label-instructions" onfocusout="calculateAvgMaxData()"></textarea>
-            <label id="error-label" style="color:red"></label>
-
-            <label class="form-label" id="avg-data-element"> Computed Average </label>
-            <label class="form-label" id="max-data-element"> Computed Maximum </label>
 
             <!-- Submit -->
             <button type="submit">Submit Survey</button>

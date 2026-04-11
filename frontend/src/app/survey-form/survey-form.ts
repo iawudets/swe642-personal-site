@@ -40,59 +40,6 @@ export class SurveyForm implements OnInit {
     this.greeting = this.responseForTimeOfDay() + new_username + "! Welcome to the SWE642 Survey Form!";
   }
 
-  calculateAvgMaxData() {
-    let input: any = (document.getElementById('data-label-instructions')) as HTMLInputElement;
-    input = input.value;
-    const avg_data_element: HTMLElement | null = document.getElementById("avg-data-element");
-    const max_data_element: HTMLElement | null = document.getElementById("max-data-element");
-    const error_element: HTMLElement | null = document.getElementById("error-label");
-    const values_string: string = input.split(",");
-    if (values_string.length != 10 || avg_data_element == null || max_data_element == null || error_element == null) {
-      this.printError();
-      return;
-    }
-    let values_number: number[] = [];
-    for (let x1: number = 0; x1 < 10; x1++) {
-
-      let number_element: number = parseInt(values_string[x1]);
-
-      // checking for null/invalid values
-      if (isNaN(number_element)) {
-        this.printError();
-        return;
-      }
-
-      // checking for valid, but out of range values
-      if (number_element > 100 || number_element < 1) {
-        avg_data_element.textContent = "Average";
-        max_data_element.textContent = "Maximum";
-        this.printError();
-        return;
-      }
-      values_number[x1] = number_element;
-    }
-    error_element.textContent = "";
-    let max = 0;
-    let sum = 0;
-    for (let x2 = 0; x2 < 10; x2++) {
-      if (values_number[x2] > max) {max = values_number[x2];}
-      sum += values_number[x2];
-    }
-    const avg = sum / values_number.length;
-
-    avg_data_element.textContent = "Average: " + avg;
-    max_data_element.textContent = "Maximum: " + max;
-    error_element.hidden = true;
-
-  }
-
-  printError() {
-    const error_element = document.getElementById("error-label");
-    if (error_element == null) { console.log("printing error failed!"); return; }
-    error_element.textContent = "Error: This field must have a list of 10 numbers, separated by commas. Each number must be from 1 to 100.";
-    error_element.hidden = false;
-  }
-
   validateSurveyFormInput(event: any) {
     // store values of all fields to be validated
     let name_input: any | null = document.getElementById("username") as HTMLInputElement;
