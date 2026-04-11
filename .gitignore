@@ -8,9 +8,9 @@
 /out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+frontend/node_modules
+frontend/npm-debug.log
+frontend/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -31,7 +31,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular
+/frontend/.angular
 .sass-cache/
 /connect.lock
 /coverage
