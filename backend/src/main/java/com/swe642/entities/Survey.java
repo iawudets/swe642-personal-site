@@ -8,7 +8,7 @@ import java.util.Date;
 
 import com.swe642.enums.Enums;
 
-@Repository
+@Entity
 @Table(name = "SURVEY")
 public class Survey implements java.io.Serializable {
 
@@ -63,6 +63,70 @@ public class Survey implements java.io.Serializable {
 
   @Column(name = "COMMENT" , nullable=false)
   private String comment;
+
+  public void setSurveyId(long surveyId) {
+    this.surveyId = surveyId;
+  }
+
+  public void setTimeCreated(long timeCreated) {
+    this.timeCreated = timeCreated;
+  }
+
+  public void setSurveyDate(Date surveyDate) {
+    this.surveyDate = surveyDate;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public void setStreet(String street) {
+    this.street = street;
+  }
+
+  public void setZip(String zip) {
+    this.zip = zip;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setCampusLikeChoice(Enums.CampusLikeChoice campusLikeChoice) {
+    this.campusLikeChoice = campusLikeChoice;
+  }
+
+  public void setUniversityInterestChoice(Enums.UniversityInterestChoice universityInterestChoice) {
+    this.universityInterestChoice = universityInterestChoice;
+  }
+
+  public void setGradMonth(String gradMonth) {
+    this.gradMonth = gradMonth;
+  }
+
+  public void setGradYear(String gradYear) {
+    this.gradYear = gradYear;
+  }
+
+  public void setComment(String comment) {
+    this.comment = comment;
+  }
 
   public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, Enums.CampusLikeChoice campusLikeChoice, Enums.UniversityInterestChoice universityInterestChoice, String gradMonth, String gradYear, String comment) {
 
