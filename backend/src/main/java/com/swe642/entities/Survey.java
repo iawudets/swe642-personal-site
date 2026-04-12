@@ -6,29 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.time.Instant;
 import java.util.Date;
 
+import com.swe642.enums.Enums;
+
 @Repository
 @Table(name = "SURVEY")
 public class Survey implements java.io.Serializable {
-
-  private enum UniversityInterestChoice {
-    FRIENDS,
-    TELEVISION,
-    INTERNET,
-    OTHER
-  }
-  private enum CampusLikeChoice {
-    STUDENTS,
-    LOCATION,
-    CAMPUS,
-    ATMOSPHERE,
-    DORM,
-    SPORTS
-  }
-  private enum RecommendLikelihoodChoice {
-    VERY_LIKELY,
-    LIKELY,
-    UNLIKELY
-  }
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,11 +49,11 @@ public class Survey implements java.io.Serializable {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "CAMPUS_LIKE_CHOICE" , nullable=false)
-  private CampusLikeChoice campusLikeChoice;
+  private Enums.CampusLikeChoice campusLikeChoice;
 
   @Enumerated(EnumType.STRING)
   @Column(name = "UNIVERSITY_INTEREST_CHOICE")
-  private UniversityInterestChoice universityInterestChoice;
+  private Enums.UniversityInterestChoice universityInterestChoice;
 
   @Column(name = "GRAD_MONTH" , nullable=false)
   private String gradMonth;
@@ -82,7 +64,8 @@ public class Survey implements java.io.Serializable {
   @Column(name = "COMMENT" , nullable=false)
   private String comment;
 
-  public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, CampusLikeChoice campusLikeChoice, UniversityInterestChoice universityInterestChoice, String gradMonth, String gradYear, String comment) {
+  public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, Enums.CampusLikeChoice campusLikeChoice, Enums.UniversityInterestChoice universityInterestChoice, String gradMonth, String gradYear, String comment) {
+
     this.timeCreated = Instant.now().getEpochSecond();
     this.surveyDate = surveyDate;
     this.firstName = firstName;
