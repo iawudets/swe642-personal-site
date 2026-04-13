@@ -1,6 +1,6 @@
-package com.swe642.repositories;
+package com.swe642.swe642_personal_site.repositories;
 
-import com.swe642.entities.Survey;
+import com.swe642.swe642_personal_site.entities.Survey;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

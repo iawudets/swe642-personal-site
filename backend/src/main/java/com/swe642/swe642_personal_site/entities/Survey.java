@@ -1,12 +1,11 @@
-package com.swe642.entities;
+package com.swe642.swe642_personal_site.entities;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Repository;
 
 import java.time.Instant;
 import java.util.Date;
 
-import com.swe642.enums.Enums;
+import com.swe642.swe642_personal_site.enums.Enums;
 
 @Entity
 @Table(name = "SURVEY")
