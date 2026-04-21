@@ -26,13 +26,18 @@ public class SurveyController {
         return ResponseEntity.ok(surveyRepository.findAll());
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testApi() {
+      return ResponseEntity.ok("Hello World! <3 :)");
+    }
+
     @PostMapping
     public ResponseEntity<Survey> createSurvey(@RequestBody Survey survey) {
         Survey savedSurvey = surveyRepository.save(survey);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedSurvey);
     }
 
-    @PostMapping("/test")
+    @PostMapping("/test-create")
     public ResponseEntity<Survey> createTestSurvey() {
       Survey survey1 = new Survey(
         new Date(),
