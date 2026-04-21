@@ -134,7 +134,7 @@
 
         <h2>Campus Visit Survey</h2>
 
-        <form autocomplete="on" id="survey-form" onsubmit="return validateSurveyFormInput(event)" novalidate>
+        <form autocomplete="on" id="survey-form" (submit)="validateSurveyFormInput($event)" novalidate>
 
             <!-- Date of Survey -->
             <label for="survey_date" class="required">Date of Survey</label>
@@ -163,8 +163,8 @@
             <span id="placeholder-state">---</span>
 
             <!-- Contact -->
-            <label for="tel" class="required">Telephone Number</label>
-            <input type="tel" id="tel" name="tel" placeholder="123-456-7890" required>
+            <label for="phone" class="required">Telephone Number</label>
+            <input type="phone" id="phone" name="phone" placeholder="123-456-7890" required>
 
             <label for="email" class="required">E-mail</label>
             <input type="email" id="email" name="email" placeholder="example@domain.com" required>

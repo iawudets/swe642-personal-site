@@ -42,15 +42,20 @@ export class SurveyForm implements OnInit {
 
   validateSurveyFormInput(event: any) {
     // store values of all fields to be validated
-    let name_input: any | null = document.getElementById("username") as HTMLInputElement;
+    let firstname_input: any | null = document.getElementById("first_name") as HTMLInputElement;
+    let lastname_input: any | null = document.getElementById("last_name") as HTMLInputElement;
     let address_input: any | null = document.getElementById("street") as HTMLInputElement;
     let email_input: any | null = document.getElementById("email") as HTMLInputElement;
-    if (name_input == null || address_input == null || email_input == null) {
-      return;
+    let phone_input: any | null = document.getElementById("phone") as HTMLInputElement;
+    if (firstname_input == null || lastname_input == null || address_input == null || email_input == null || phone_input == null) {
+      console.log("something bad happened");
+      return false;
     }
-    name_input = name_input.value.trim();
+    firstname_input = firstname_input.value.trim();
+    lastname_input = lastname_input.value.trim();
     address_input = address_input.value.trim();
     email_input = email_input.value.trim();
+    phone_input = phone_input.value.trim();
 
     // arrays to store each field's error message
     let invalid_fields: any[] = [];
@@ -60,11 +65,16 @@ export class SurveyForm implements OnInit {
     const name_regex = /^[A-Za-z\s]+$/;
     const address_regex = /^[A-Za-z0-9\s.,-]+$/;
     const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phone_regex = /^(\+?\d{1,2}\s?)?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
 
     // validate all text input fields first
-    if (!(name_regex.test(name_input))) {
-      error_msg.push("Name can only contain alphabetic characters.");
-      invalid_fields.push("username");
+    if (!(name_regex.test(firstname_input))) {
+      error_msg.push("First name can only contain alphabetic characters.");
+      invalid_fields.push("first_name");
+    }
+    if (!(name_regex.test(lastname_input))) {
+      error_msg.push("Last name can only contain alphabetic characters.");
+      invalid_fields.push("last_name");
     }
     if (!(address_regex.test(address_input))) {
       error_msg.push("Address contains invalid characters.");
@@ -73,6 +83,10 @@ export class SurveyForm implements OnInit {
     if (!(email_regex.test(email_input))) {
       error_msg.push("Email address is invalid.");
       invalid_fields.push("email");
+    }
+    if (!(phone_regex.test(phone_input))) {
+      error_msg.push("Phone number is invalid. Must be at least 10 digits and cannot contain periods.");
+      invalid_fields.push("phone");
     }
 
     // check that at least 2 checkboxes are selected
@@ -88,7 +102,7 @@ export class SurveyForm implements OnInit {
 
     if (error_msg.length > 0) {
       event.preventDefault();
-      const error_message = "The following errors were found: \n" + error_msg.join("\n");
+      const error_message = "The following errors were found: \n\n" + error_msg.join("\n");
       window.alert(error_message);
 
       for (let i = 0; i < invalid_fields.length; i++) {
