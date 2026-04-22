@@ -37,7 +37,12 @@ public class SurveyController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedSurvey);
     }
 
+<<<<<<< Updated upstream
     @PostMapping("/test-create")
+=======
+    // TODO fix this. Need to add recommendationLikelihoodChoice
+    @PostMapping("/test")
+>>>>>>> Stashed changes
     public ResponseEntity<Survey> createTestSurvey() {
       Survey survey1 = new Survey(
         new Date(),

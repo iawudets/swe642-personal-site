@@ -54,6 +54,10 @@ public class Survey implements java.io.Serializable {
   @Column(name = "UNIVERSITY_INTEREST_CHOICE")
   private Enums.UniversityInterestChoice universityInterestChoice;
 
+  @Enumerated(EnumType.STRING)
+  @Column(name = "RECOMMEND_LIKELIHOOD_CHOICE")
+  private Enums.RecommendLikelihoodChoice recommendLikelihoodChoice;
+
   @Column(name = "GRAD_MONTH" , nullable=false)
   private String gradMonth;
 
