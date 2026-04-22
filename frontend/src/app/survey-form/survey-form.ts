@@ -40,7 +40,25 @@ export class SurveyForm implements OnInit {
     this.greeting = this.responseForTimeOfDay() + new_username + "! Welcome to the SWE642 Survey Form!";
   }
 
-  validateSurveyFormInput(event: any) {
+  /*
+  Handles the submission event for the CS Survey Form. First validates any required text input fields through
+  validateSurveyFormInput.
+
+  If validateSurveyFormInput returns a valid JSON object...
+  - We use that object to make an API call to the backend to add a new Survey to the database. Then we return true.
+  If validateSurveyFormInput returns null...
+  - We simply return false.
+  */
+  submissionHandler(event: any) {
+    if (this.validateSurveyFormInput(event) != null) {
+      // TODO process JSON object
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  validateSurveyFormInput(event: any): JSON {
     // store values of all fields to be validated
     let firstname_input: any | null = document.getElementById("first_name") as HTMLInputElement;
     let lastname_input: any | null = document.getElementById("last_name") as HTMLInputElement;
@@ -48,8 +66,8 @@ export class SurveyForm implements OnInit {
     let email_input: any | null = document.getElementById("email") as HTMLInputElement;
     let phone_input: any | null = document.getElementById("phone") as HTMLInputElement;
     if (firstname_input == null || lastname_input == null || address_input == null || email_input == null || phone_input == null) {
-      console.log("something bad happened");
-      return false;
+      console.log("Error: One of the validation fields were empty.");
+      return null;
     }
     firstname_input = firstname_input.value.trim();
     lastname_input = lastname_input.value.trim();
@@ -111,10 +129,12 @@ export class SurveyForm implements OnInit {
           invalid_fields_element.textContent = "";
         }
       }
-      return false;
+      console.log("Error: One or more fields were invalid.");
+      return null;
     }
     // continue to form submission
-    return true;
+    // TODO add actual return here
+    return null;
   }
 
   addressSearchByZip() {
