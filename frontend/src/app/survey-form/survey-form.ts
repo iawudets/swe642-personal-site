@@ -36,7 +36,8 @@ export class SurveyForm implements OnInit {
     if (new_username !== null) {
       new_username = new_username.trim();
     }
-    document.cookie = "username=" + new_username + "; expires=" + new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate());
+    document.cookie = "username=" + new_username + "; expires=" + new Date(new Date().getFullYear() + 1,
+      new Date().getMonth(), new Date().getDate());
     this.greeting = this.responseForTimeOfDay() + new_username + "! Welcome to the SWE642 Survey Form!";
   }
 
@@ -49,14 +50,24 @@ export class SurveyForm implements OnInit {
   If validateSurveyFormInput returns null...
   - We simply return false.
   */
+  /* TODO create another function that will format the FormData correctly b/c we currently need...
+    - City and State fields must be appended to the current form input (validate first)
+    - All checkbox/radio button choices need to be mapped to expected enums
+    -
+  */
   submissionHandler(event: any) : boolean {
-    const url_string : string = "http://localhost:8080/survey/";
+    const url_string : string = "http://localhost:8080/surveys";
     const post_body : FormData | null = this.validateSurveyFormInput(event);
     if (post_body != null) {
 
+      let json_post_body : any = Object.fromEntries(post_body.entries());
+      json_post_body = JSON.stringify(json_post_body);
       const response : Promise<Response> = fetch(url_string, {
         method: "POST",
-        body: post_body
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: json_post_body
       });
       return true;
     } else {
@@ -116,12 +127,12 @@ export class SurveyForm implements OnInit {
     }
 
     // check that at least 2 checkboxes are selected
-    const checkboxes = document.querySelectorAll("input[name='liked']:checked");
+    const checkboxes = document.querySelectorAll("input[name='campusLikeChoice']:checked");
     if (checkboxes.length < 2) {
       error_msg.push("Please select at least two things you liked about the campus.");
     }
     // check that a radio button is selected
-    const radio_buttons = document.querySelector("input[name='interest']:checked");
+    const radio_buttons = document.querySelector("input[name='universityInterestChoice']:checked");
     if (!radio_buttons) {
       error_msg.push("Please select one reason you became interested in GMU.")
     }

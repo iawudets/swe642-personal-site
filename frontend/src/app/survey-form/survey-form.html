@@ -138,15 +138,15 @@
 
             <!-- Date of Survey -->
             <label for="survey_date" class="required">Date of Survey</label>
-            <input type="date" id="survey_date" name="survey_date" placeholder="MM/DD/YYYY" required>
+            <input type="date" id="survey_date" name="surveyDate" placeholder="MM/DD/YYYY" required>
 
             <!-- First Name -->
             <label for="first_name" class="required">First Name</label>
-            <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required autofocus>
+            <input type="text" id="first_name" name="firstName" placeholder="Enter your first name" required autofocus>
 
             <!-- Last Name -->
             <label for="last_name" class="required">Last Name</label>
-            <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required autofocus>
+            <input type="text" id="last_name" name="lastName" placeholder="Enter your last name" required autofocus>
 
             <!-- Address -->
             <label for="street" class="required">Street Address</label>
@@ -164,7 +164,7 @@
 
             <!-- Contact -->
             <label for="phone" class="required">Telephone Number</label>
-            <input type="phone" id="phone" name="phone" placeholder="123-456-7890" required>
+            <input type="phone" id="phone" name="phoneNumber" placeholder="123-456-7890" required>
 
             <label for="email" class="required">E-mail</label>
             <input type="email" id="email" name="email" placeholder="example@domain.com" required>
@@ -172,38 +172,38 @@
             <!-- Checkboxes -->
             <label class="required">What did you like most about the campus?</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="students" name="liked" value="students">
+                <input type="checkbox" id="students" name="campusLikeChoice" value="students">
                 <label for="students">Students</label>
 
-                <input type="checkbox" id="location" name="liked" value="location">
+                <input type="checkbox" id="location" name="campusLikeChoice" value="location">
                 <label for="location">Location</label>
 
-                <input type="checkbox" id="campus" name="liked" value="campus">
+                <input type="checkbox" id="campus" name="campusLikeChoice" value="campus">
                 <label for="campus">Campus</label>
 
-                <input type="checkbox" id="atmosphere" name="liked" value="atmosphere">
+                <input type="checkbox" id="atmosphere" name="campusLikeChoice" value="atmosphere">
                 <label for="atmosphere">Atmosphere</label>
 
-                <input type="checkbox" id="dorms" name="liked" value="dorms">
+                <input type="checkbox" id="dorms" name="campusLikeChoice" value="dorms">
                 <label for="dorms">Dorm Rooms</label>
 
-                <input type="checkbox" id="sports" name="liked" value="sports">
+                <input type="checkbox" id="sports" name="campusLikeChoice" value="sports">
                 <label for="sports">Sports</label>
             </div>
 
             <!-- Radio buttons -->
             <label>How did you become interested in the university?</label>
             <div class="radio-group">
-                <input type="radio" id="friends" name="interest" value="friends" >
+                <input type="radio" id="friends" name="universityInterestChoice" value="friends" >
                 <label for="friends">Friends</label>
 
-                <input type="radio" id="tv" name="interest" value="television">
+                <input type="radio" id="tv" name="universityInterestChoice" value="television">
                 <label for="tv">Television</label>
 
-                <input type="radio" id="internet" name="interest" value="internet">
+                <input type="radio" id="internet" name="universityInterestChoice" value="internet">
                 <label for="internet">Internet</label>
 
-                <input type="radio" id="other" name="interest" value="other">
+                <input type="radio" id="other" name="universityInterestChoice" value="other">
                 <label for="other">Other</label>
             </div>
 
@@ -230,7 +230,7 @@
 
             <!-- Dropdown -->
             <label for="recommend" class="required">Likelihood of recommending this school</label>
-            <select id="recommend" name="recommend" required>
+            <select id="recommend" name="recommendLikelihoodChoice" required>
                 <option value="">--Select--</option>
                 <option value="very">Very Likely</option>
                 <option value="likely">Likely</option>
@@ -239,7 +239,7 @@
 
             <!-- Comments -->
             <label for="comments">Additional Comments</label>
-            <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
+            <textarea id="comments" name="comment" rows="4" placeholder="Enter your comments here..."></textarea>
 
             <!-- Submit -->
             <button type="submit">Submit Survey</button>
