@@ -1,12 +1,11 @@
-package com.swe642.entities;
+package com.swe642.swe642_personal_site.entities;
 
 import jakarta.persistence.*;
-import org.springframework.stereotype.Repository;
 
 import java.time.Instant;
 import java.util.Date;
 
-import com.swe642.enums.Enums;
+import com.swe642.swe642_personal_site.enums.Enums;
 
 @Entity
 @Table(name = "SURVEY")
@@ -63,6 +62,70 @@ public class Survey implements java.io.Serializable {
 
   @Column(name = "COMMENT" , nullable=false)
   private String comment;
+
+  public long getSurveyId() {
+    return surveyId;
+  }
+
+  public long getTimeCreated() {
+    return timeCreated;
+  }
+
+  public Date getSurveyDate() {
+    return surveyDate;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public String getStreet() {
+    return street;
+  }
+
+  public String getZip() {
+    return zip;
+  }
+
+  public String getCity() {
+    return city;
+  }
+
+  public String getState() {
+    return state;
+  }
+
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public Enums.CampusLikeChoice getCampusLikeChoice() {
+    return campusLikeChoice;
+  }
+
+  public Enums.UniversityInterestChoice getUniversityInterestChoice() {
+    return universityInterestChoice;
+  }
+
+  public String getGradMonth() {
+    return gradMonth;
+  }
+
+  public String getGradYear() {
+    return gradYear;
+  }
+
+  public String getComment() {
+    return comment;
+  }
 
   public void setSurveyId(long surveyId) {
     this.surveyId = surveyId;
@@ -127,6 +190,8 @@ public class Survey implements java.io.Serializable {
   public void setComment(String comment) {
     this.comment = comment;
   }
+
+  public Survey() {}
 
   public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, Enums.CampusLikeChoice campusLikeChoice, Enums.UniversityInterestChoice universityInterestChoice, String gradMonth, String gradYear, String comment) {
 
