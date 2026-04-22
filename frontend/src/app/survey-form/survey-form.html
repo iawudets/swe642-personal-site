@@ -134,11 +134,11 @@
 
         <h2>Campus Visit Survey</h2>
 
-        <form autocomplete="on" id="survey-form" (submit)="validateSurveyFormInput($event)" novalidate>
+        <form autocomplete="on" id="survey-form" (submit)="submissionHandler($event)" novalidate>
 
             <!-- Date of Survey -->
             <label for="survey_date" class="required">Date of Survey</label>
-            <input type="date" id="survey_date" placeholder="MM/DD/YYYY" required>
+            <input type="date" id="survey_date" name="survey_date" placeholder="MM/DD/YYYY" required>
 
             <!-- First Name -->
             <label for="first_name" class="required">First Name</label>
@@ -153,7 +153,7 @@
             <input type="text" id="street" name="street" required>
 
             <label for="zip" class="required" >Zip Code</label>
-            <input type="text" id="zip" name="zip" placeholder="12345" onblur="addressSearchByZip()" required>
+            <input type="text" id="zip" name="zip" onblur="addressSearchByZip()" required>
             <div id="zip-error-element" style="color:red"></div>
 
             <label>City</label>
