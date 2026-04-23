@@ -37,12 +37,7 @@ public class SurveyController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedSurvey);
     }
 
-<<<<<<< Updated upstream
-    @PostMapping("/test-create")
-=======
-    // TODO fix this. Need to add recommendationLikelihoodChoice
     @PostMapping("/test")
->>>>>>> Stashed changes
     public ResponseEntity<Survey> createTestSurvey() {
       Survey survey1 = new Survey(
         new Date(),
@@ -56,6 +51,7 @@ public class SurveyController {
         "haha@thankyou.com",
         Enums.CampusLikeChoice.SPORTS,
         Enums.UniversityInterestChoice.INTERNET,
+        Enums.RecommendLikelihoodChoice.LIKELY,
         "January",
         "2025",
         "I love this campus! <3"
