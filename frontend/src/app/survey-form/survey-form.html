@@ -153,7 +153,7 @@
             <input type="text" id="street" name="street" required>
 
             <label for="zip" class="required" >Zip Code</label>
-            <input type="text" id="zip" name="zip" onblur="addressSearchByZip()" required>
+            <input type="text" id="zip" name="zip" (blur)="addressSearchByZip()" required>
             <div id="zip-error-element" style="color:red"></div>
 
             <label>City</label>

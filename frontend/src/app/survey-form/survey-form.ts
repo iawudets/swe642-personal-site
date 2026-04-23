@@ -83,8 +83,18 @@ export class SurveyForm implements OnInit {
     let address_input: any | null = document.getElementById("street") as HTMLInputElement;
     let email_input: any | null = document.getElementById("email") as HTMLInputElement;
     let phone_input: any | null = document.getElementById("phone") as HTMLInputElement;
+    let city_field : any | null = document.getElementById("placeholder-city") as HTMLFormElement;
+    let state_field: any | null = document.getElementById("placeholder-state") as HTMLFormElement;
+
+    // make sure these fields weren't empty
     if (firstname_input == null || lastname_input == null || address_input == null || email_input == null || phone_input == null) {
       console.log("Error: One of the validation fields were empty.");
+      return null;
+    }
+
+    // make sure city and state entries were found according to entered zip code
+    if (city_field.textContent == "---" || city_field == null || state_field == null || state_field.textContent == "---")  {
+      console.log("Error: City and State could not be determined.");
       return null;
     }
     // TODO simplify this as we're using FormData now
@@ -152,11 +162,22 @@ export class SurveyForm implements OnInit {
       return null;
     }
     // continue to form submission
-    // TODO add City and State calculated fields to the FormData
     const surveyFormElement : HTMLFormElement | null = document.getElementById("survey-form") as HTMLFormElement;
     if (!surveyFormElement) { return null; }
+    const surveyFormData : FormData = new FormData(surveyFormElement);
 
-    return new FormData(surveyFormElement);
+    surveyFormData.append("city", city_field.textContent);
+    surveyFormData.append("state", state_field.textContent);
+
+    surveyFormData.set("campusLikeChoice", surveyFormData.get("campusLikeChoice")!.toString().toUpperCase())
+    surveyFormData.set("universityInterestChoice", surveyFormData.get("universityInterestChoice")!.toString().toUpperCase())
+    surveyFormData.set("recommendLikelihoodChoice", surveyFormData.get("recommendLikelihoodChoice")!.toString().toUpperCase())
+
+    console.log(surveyFormData.get("campusLikeChoice"));
+    console.log(surveyFormData.get("universityInterestChoice"));
+    console.log(surveyFormData.get("recommendLikelihoodChoice"));
+
+    return surveyFormData;
   }
 
   addressSearchByZip() {
@@ -189,6 +210,7 @@ export class SurveyForm implements OnInit {
         let zip_match = zip_data.find((entry: any) => entry.zip_code == zip_input);
 
         if (zip_match) {
+          zip_error_element.textContent = "";
           city_result.textContent = zip_match.city;
           state_result.textContent = zip_match.state;
         } else {
