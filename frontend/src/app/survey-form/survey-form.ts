@@ -169,14 +169,6 @@ export class SurveyForm implements OnInit {
     surveyFormData.append("city", city_field.textContent);
     surveyFormData.append("state", state_field.textContent);
 
-    surveyFormData.set("campusLikeChoice", surveyFormData.get("campusLikeChoice")!.toString().toUpperCase())
-    surveyFormData.set("universityInterestChoice", surveyFormData.get("universityInterestChoice")!.toString().toUpperCase())
-    surveyFormData.set("recommendLikelihoodChoice", surveyFormData.get("recommendLikelihoodChoice")!.toString().toUpperCase())
-
-    console.log(surveyFormData.get("campusLikeChoice"));
-    console.log(surveyFormData.get("universityInterestChoice"));
-    console.log(surveyFormData.get("recommendLikelihoodChoice"));
-
     return surveyFormData;
   }
 
