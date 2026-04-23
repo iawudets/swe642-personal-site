@@ -23,7 +23,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets/zipcodes.json"
             ],
             "styles": [
               "src/styles.css"
