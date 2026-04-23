@@ -2,6 +2,7 @@ package com.swe642.swe642_personal_site.controllers;
 
 import com.swe642.swe642_personal_site.enums.Enums;
 import com.swe642.swe642_personal_site.repositories.SurveyRepository;
+import jakarta.websocket.server.PathParam;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,16 @@ public class SurveyController {
     @GetMapping
     public ResponseEntity<List<Survey>> getAllSurveys() {
         return ResponseEntity.ok(surveyRepository.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Survey> getSurveyById(@PathVariable("id") String id) {
+      Survey survey = surveyRepository.findSurveyBySurveyId(Long.parseLong(id));
+      if (survey != null) {
+        return ResponseEntity.ok(survey);
+      } else {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+      }
     }
 
     @GetMapping("/test")
