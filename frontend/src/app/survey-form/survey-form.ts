@@ -179,7 +179,7 @@ export class SurveyForm implements OnInit {
 
     // perform AJAX operations here
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "zipcodes.json", true);
+    xhr.open("GET", "assets/zipcodes.json", true);
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
@@ -198,6 +198,7 @@ export class SurveyForm implements OnInit {
     };
 
     xhr.send();
+
   }
 
   ngOnInit(): void {
