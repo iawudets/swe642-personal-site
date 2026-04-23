@@ -49,9 +49,9 @@ public class SurveyController {
         "Nebraska",
         "3244852354",
         "haha@thankyou.com",
-        Enums.CampusLikeChoice.SPORTS,
-        Enums.UniversityInterestChoice.INTERNET,
-        Enums.RecommendLikelihoodChoice.LIKELY,
+        Enums.CampusLikeChoice.Sports,
+        Enums.UniversityInterestChoice.Internet,
+        Enums.RecommendLikelihoodChoice.Likely,
         "January",
         "2025",
         "I love this campus! <3"
