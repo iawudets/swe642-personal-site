@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-survey-form',
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './survey-form.html',
   styleUrl: './survey-form.css',
