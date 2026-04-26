@@ -37,7 +37,7 @@
     <ul>
       @for (survey of survey_array; track $index) {
         <li>
-          <a routerLink="/survey-view">
+          <a [routerLink]="['/survey-view/', survey.surveyId]">
            Survey #{{ survey.surveyId }}, submitted by {{ survey.firstName }} {{ survey.lastName }}
           </a>
         </li>
