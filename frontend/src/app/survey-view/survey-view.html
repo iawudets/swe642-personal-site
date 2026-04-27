@@ -1,1 +1,67 @@
-<p>survey-view works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<!-- Author: Ilia Awudetsey -->
+<!-- Description: This document contains the HTML to display a retrieved survey in a visually appealing format. -->
+<head>
+  <title>CS Department Survey</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Header -->
+<div class="heading-box">
+  <header class="text-center">
+    <h1 class="display-3">Computer Science Department Survey Summary</h1>
+  </header>
+</div>
+
+<div class="survey-display container-md col-md-4">
+  <h2 class="survey-title"> {{ survey.firstName }} {{ survey.lastName }}'s Survey Summary</h2>
+
+  <div class="survey-section">
+    <h3 class="section-title">Personal Information</h3>
+    <div class="survey-item">
+      <p class="label">Name:</p>
+      <p class="value">{{ survey.firstName }} {{ survey.lastName }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">Email:</p>
+      <p class="value">{{ survey.email }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">Phone number:</p>
+      <p class="value">{{ survey.phoneNumber }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">Address:</p>
+      <p class="value">{{ survey.street }}<br>{{ survey.city }}, {{ survey.state }} {{ survey.zip }}</p>
+    </div>
+  </div>
+
+  <div class="survey-section">
+    <h3 class="section-title">Survey Responses</h3>
+    <div class="survey-item">
+      <p class="label">Graduation Date:</p>
+      <p class="value">{{ survey.gradMonth }} {{ survey.gradYear }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">What did you like most about the campus?</p>
+      <p class="value">{{ survey.campusLikeChoice }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">How did you become interested in the university?</p>
+      <p class="value">{{ survey.universityInterestChoice }}</p>
+    </div>
+    <div class="survey-item">
+      <p class="label">Comments:</p>
+      <p class="value">{{ survey.comment }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
