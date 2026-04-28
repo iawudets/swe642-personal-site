@@ -1,3 +1,7 @@
+/*
+Author: Ilia Awudetsey
+Description: This is where the Spring Boot application starts.
+ */
 package com.swe642.swe642_personal_site;
 
 import org.springframework.boot.SpringApplication;

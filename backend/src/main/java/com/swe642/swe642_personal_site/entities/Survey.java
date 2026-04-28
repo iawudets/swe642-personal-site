@@ -1,3 +1,8 @@
+/*
+Author: Ilia Awudetsey
+Description: Survey holds the survey object that the website uses to store information about surveys. It has no methods
+and exists as a mapping to the real survey table in the database.
+ */
 package com.swe642.swe642_personal_site.entities;
 
 import jakarta.persistence.*;

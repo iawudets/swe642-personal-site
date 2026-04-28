@@ -1,3 +1,7 @@
+/*
+Author: Ilia Awudetsey
+Description: SurveyController defines the API that the Angular frontend uses to manipulate the database.
+ */
 package com.swe642.swe642_personal_site.controllers;
 
 import com.swe642.swe642_personal_site.enums.Enums;
@@ -83,14 +87,14 @@ public class SurveyController {
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteSurvey(long surveyId) {
-        boolean isNotFound = surveyRepository.findById(surveyId).isEmpty();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSurvey(@PathVariable("id") String id) {
+        boolean isNotFound = surveyRepository.findById(Long.parseLong(id)).isEmpty();
 
         if (isNotFound) {
           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } else {
-          surveyRepository.deleteById(surveyId);
+          surveyRepository.deleteById(Long.parseLong(id));
           return ResponseEntity.ok(null);
         }
     }
