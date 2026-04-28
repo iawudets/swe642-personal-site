@@ -1,6 +1,9 @@
+<!--
+Author: Ilia Awudetsey
+Description: This is the HTML file for the SurveyForm component. It takes in all the user's input for the department survey.
+-->
 <!DOCTYPE html>
 <html lang="en">
-<!-- Author: Ilia Awudetsey -->
 <head>
     <title>CS Department Survey</title>
     <meta charset="UTF-8">
@@ -14,6 +17,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<<<<<<< Updated upstream
     <style>
         body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         h1,button {font-family: "Montserrat", sans-serif}
@@ -110,6 +114,10 @@
       <a href='javascript:void(0)' (click)='newUserName($event)' class="script-a"> Not you? Click here to change names! </a>
   }
 </div>
+=======
+</head>
+<body class="bg-light">
+>>>>>>> Stashed changes
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-white navbar-dark">
@@ -169,8 +177,9 @@
             <label for="email" class="required">E-mail</label>
             <input type="email" id="email" name="email" placeholder="example@domain.com" required>
 
-            <!-- Checkboxes -->
+
             <label class="required">What did you like most about the campus?</label>
+<<<<<<< Updated upstream
             <div class="checkbox-group">
                 <input type="checkbox" id="students" name="liked" value="students">
                 <label for="students">Students</label>
@@ -189,10 +198,45 @@
 
                 <input type="checkbox" id="sports" name="liked" value="sports">
                 <label for="sports">Sports</label>
+=======
+          <div class="d-flex flex-column gap-2 selection-container" style="max-width: 350px;">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="students" class="fw-normal mb-0">Students</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="students" name="campusLikeChoice" value="Students">
+>>>>>>> Stashed changes
             </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="location" class="fw-normal mb-0">Location</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="location" name="campusLikeChoice" value="Location">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="campus" class="fw-normal mb-0">Campus</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="campus" name="campusLikeChoice" value="Campus">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="atmosphere" class="fw-normal mb-0">Atmosphere</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="atmosphere" name="campusLikeChoice" value="Atmosphere">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="dorms" class="fw-normal mb-0">Dorm Rooms</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="dorms" name="campusLikeChoice" value="Dorms">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="sports" class="fw-normal mb-0">Sports</label>
+              <input class="form-check-input custom-small-check" type="checkbox" id="sports" name="campusLikeChoice" value="Sports">
+            </div>
+
+          </div>
 
             <!-- Radio buttons -->
             <label>How did you become interested in the university?</label>
+<<<<<<< Updated upstream
             <div class="radio-group">
                 <input type="radio" id="friends" name="interest" value="friends" >
                 <label for="friends">Friends</label>
@@ -205,7 +249,30 @@
 
                 <input type="radio" id="other" name="interest" value="other">
                 <label for="other">Other</label>
+=======
+          <div class="selection-container flex-column gap-2" style="max-width: 350px;">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="friends" class="fw-normal mb-0">Friends</label>
+              <input class="form-check-input custom-small-radio" type="radio" id="friends" name="universityInterestChoice" value="Friends">
+>>>>>>> Stashed changes
             </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="tv" class="fw-normal mb-0">Television</label>
+              <input class="form-check-input custom-small-radio" type="radio" id="tv" name="universityInterestChoice" value="Television">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="internet" class="fw-normal mb-0">Internet</label>
+              <input class="form-check-input custom-small-radio" type="radio" id="internet" name="universityInterestChoice" value="Internet">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <label for="other" class="fw-normal mb-0">Other</label>
+              <input class="form-check-input custom-small-radio" type="radio" id="other" name="universityInterestChoice" value="Other">
+            </div>
+          </div>
 
             <!-- Graduation month/year -->
             <label for="gradMonth" class="required">High School Graduation Month</label>

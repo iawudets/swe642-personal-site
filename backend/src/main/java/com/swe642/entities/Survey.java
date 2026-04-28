@@ -1,4 +1,13 @@
+<<<<<<< Updated upstream:backend/src/main/java/com/swe642/entities/Survey.java
 package com.swe642.entities;
+=======
+/*
+Author: Ilia Awudetsey
+Description: Survey holds the survey object that the website uses to store information about surveys. It has no methods
+and exists as a mapping to the real survey table in the database.
+ */
+package com.swe642.swe642_personal_site.entities;
+>>>>>>> Stashed changes:backend/src/main/java/com/swe642/swe642_personal_site/entities/Survey.java
 
 import jakarta.persistence.*;
 import org.springframework.stereotype.Repository;
@@ -128,7 +137,21 @@ public class Survey implements java.io.Serializable {
     this.comment = comment;
   }
 
+<<<<<<< Updated upstream:backend/src/main/java/com/swe642/entities/Survey.java
   public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, Enums.CampusLikeChoice campusLikeChoice, Enums.UniversityInterestChoice universityInterestChoice, String gradMonth, String gradYear, String comment) {
+=======
+  public Survey() {}
+
+  public Enums.RecommendLikelihoodChoice getRecommendLikelihoodChoice() {
+    return recommendLikelihoodChoice;
+  }
+
+  public void setRecommendLikelihoodChoice(Enums.RecommendLikelihoodChoice recommendLikelihoodChoice) {
+    this.recommendLikelihoodChoice = recommendLikelihoodChoice;
+  }
+
+  public Survey(Date surveyDate, String firstName, String lastName, String street, String zip, String city, String state, String phoneNumber, String email, Enums.CampusLikeChoice campusLikeChoice, Enums.UniversityInterestChoice universityInterestChoice, Enums.RecommendLikelihoodChoice recommendLikelihoodChoice, String gradMonth, String gradYear, String comment) {
+>>>>>>> Stashed changes:backend/src/main/java/com/swe642/swe642_personal_site/entities/Survey.java
 
     this.timeCreated = Instant.now().getEpochSecond();
     this.surveyDate = surveyDate;
@@ -142,6 +165,7 @@ public class Survey implements java.io.Serializable {
     this.email = email;
     this.campusLikeChoice = campusLikeChoice;
     this.universityInterestChoice = universityInterestChoice;
+    this.recommendLikelihoodChoice = recommendLikelihoodChoice;
     this.gradMonth = gradMonth;
     this.gradYear = gradYear;
     this.comment = comment;

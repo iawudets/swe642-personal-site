@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Author: Ilia Awudetsey -->
+<!-- Description: This document contains the HTML to display a retrieved survey in a visually appealing format. -->
+<head>
+  <title>CS Department Survey</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-black" routerLink="/survey-list"><-- Back</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="heading-box">
+  <header class="text-center">
+    <h1 class="display-3">Computer Science Department Survey Summary</h1>
+  </header>
+</div>
+
+<div class="survey-container row">
+  <div id="active_toast" class="toast toast-column col-md-2 offset-1 fade show">
+    <div class="toast-body toast-msg"> Helpful Tip: </div>
+    <hr>
+        <div class="toast-body toast-msg"> {{ toast_msg }} </div>
+  </div>
+  <div class="survey-display container-md col-md-4 offset-1">
+    <h2 class="survey-title"> {{ survey.firstName }} {{ survey.lastName }}'s Survey Summary</h2>
+
+    <div class="survey-section">
+      <h3 class="section-title">Personal Information</h3>
+      <div class="survey-item">
+        <p class="label" id="firstName">First Name:</p>
+        <p class="firstName value">{{ survey.firstName }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="lastName">Last Name:</p>
+        <p class="lastName value">{{ survey.lastName }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label">Email:</p>
+        <p class="email value">{{ survey.email }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label">Phone number:</p>
+        <p class="phoneNumber value">{{ survey.phoneNumber }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="street">Street:</p>
+        <p class="street value">{{ survey.street }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="city">City:</p>
+        <p class="value-constant">{{ survey.city }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="state">State:</p>
+        <p class="value-constant">{{ survey.state }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="zip">Zip Code:</p>
+        <p class="zip value">{{ survey.zip}}</p>
+      </div>
+    </div>
+
+    <div class="survey-section">
+      <h3 class="section-title">Survey Responses</h3>
+      <div class="survey-item">
+        <p class="label" id="gradMonth">Graduation Month:</p>
+        <p class="gradMonth value">{{ survey.gradMonth }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label" id="gradYear">Graduation Year:</p>
+        <p class="gradYear value">{{ survey.gradYear }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label">What did you like most about the campus?</p>
+        <p class="campusLikeChoice value">{{ survey.campusLikeChoice }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label">How did you become interested in the university?</p>
+        <p class="universityInterestChoice value">{{ survey.universityInterestChoice }}</p>
+      </div>
+      <div class="survey-item">
+        <p class="label">Comments:</p>
+        <p class="comment value">{{ survey.comment }}</p>
+      </div>
+    </div>
+    <div class="button-container">
+      <button type="button" class="btn button-delete btn-danger" (click)="deleteSurvey()">Delete</button>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

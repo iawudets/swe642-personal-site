@@ -1,23 +1,32 @@
+<<<<<<< Updated upstream:backend/src/main/java/com/swe642/enums/Enums.java
 package com.swe642.enums;
+=======
+/*
+Author: Ilia Awudetsey
+Description: Enums is a helper enumeration that maps to specific choices the user must make on certain sections on the
+survey form.
+ */
+package com.swe642.swe642_personal_site.enums;
+>>>>>>> Stashed changes:backend/src/main/java/com/swe642/swe642_personal_site/enums/Enums.java
 
 public class Enums {
   public enum UniversityInterestChoice {
-    FRIENDS,
-    TELEVISION,
-    INTERNET,
-    OTHER
+    Friends,
+    Television,
+    Internet,
+    Other
   }
   public enum CampusLikeChoice {
-    STUDENTS,
-    LOCATION,
-    CAMPUS,
-    ATMOSPHERE,
-    DORM,
-    SPORTS
+    Students,
+    Location,
+    Campus,
+    Atmosphere,
+    Dorms,
+    Sports
   }
   public enum RecommendLikelihoodChoice {
-    VERY_LIKELY,
-    LIKELY,
-    UNLIKELY
+    Very_Likely,
+    Likely,
+    Unlikely
   }
 }

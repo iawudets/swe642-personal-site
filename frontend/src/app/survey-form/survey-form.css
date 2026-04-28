@@ -1,0 +1,103 @@
+/*
+Author: Ilia Awudetsey
+Description: This is the CSS file for the SurveyForm component.
+ */
+body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+h1,button {font-family: "Montserrat", sans-serif}
+h1 { color: #006633; }
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.required::after {
+  content: " *";
+  color: red;
+}
+.checkbox-group, .radio-group {
+  display: inline-block;
+  margin-top: 10px;
+}
+.checkbox-group label, .radio-group label {
+  margin-right: 15px;
+  font-weight: normal;
+}
+.selection-container {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.selection-container label {
+  margin-right: 200px;
+  margin-bottom: 0.5rem;
+}
+.heading-box {
+  border: 5px solid #006633;
+  padding: 20px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  background-color: #FFCC33;
+  border-radius: 8px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+th, td {
+  border: 1px solid #006633;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #FFCC33;
+  color: #006633;
+}
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.script-a {
+  text-align: right;
+  font-family: "Lato", sans-serif;
+  color: #006633;
+}
+.button-container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.survey-header {
+  text-align: center;
+}
+.button-submit {
+  margin-right: 10px;
+}
+.custom-small-check {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+.custom-small-radio {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}

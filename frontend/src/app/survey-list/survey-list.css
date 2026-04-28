@@ -1,0 +1,81 @@
+<<<<<<< Updated upstream
+=======
+/*
+Author: Ilia Awudetsey
+Description: This is the CSS file for the SurveyList component.
+ */
+h1 { color: #006633; }
+body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+a {font-family: "Lato", sans-serif}
+h1,button {font-family: "Montserrat", sans-serif}
+h1 { color: #006633; }
+
+/* header box with a solid green border and box shadow */
+.heading-box {
+  border: 5px solid #006633;
+  padding: 20px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  background-color: #FFCC33;
+  border-radius: 8px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+/* Container spacing */
+.survey-page {
+  font-family: sans-serif;
+  padding: 20px;
+  color: #333;
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* Header styling */
+.title {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.count {
+  color: #006633;
+}
+
+/* Remove default bullets and padding */
+.survey-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Turn list items into subtle rows */
+.survey-item {
+  margin-bottom: 8px;
+}
+
+.survey-link {
+  display: block;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+
+/* Hover effect so it feels interactive */
+.survey-link:hover {
+  background: #e9ecef;
+  border-color: #ccc;
+}
+
+.survey-link strong {
+  color: #006633;
+  margin-right: 10px;
+}
+
+.empty-msg {
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+>>>>>>> Stashed changes
